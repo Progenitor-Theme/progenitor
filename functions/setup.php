@@ -35,6 +35,26 @@ if ( ! function_exists('progenitor_setup') ) {
 
 		add_theme_support('automatic-feed-links');
 
+		if ( ! function_exists( 'progenitor_navbar_fallback_left' ) ) {
+			function progenitor_navbar_fallback_left() {
+				?>
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    			<li clas="menu-item"><a class="nav-link" href="<?php echo admin_url('nav-menus.php'); ?>"><?php esc_html_e( 'Add a menu', 'progenitor' ); ?></a></li>
+				</ul>
+				<?php
+			}
+		}
+
+		if ( ! function_exists( 'progenitor_navbar_fallback_right' ) ) {
+			function progenitor_navbar_fallback_right() {
+				?>
+				<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    			<li clas="menu-item"><a class="nav-link" href="<?php echo admin_url('nav-menus.php'); ?>"><?php esc_html_e( 'Add a menu', 'progenitor' ); ?></a></li>
+				</ul>
+				<?php
+			}
+		}
+
 		if ( ! function_exists( 'progenitor_post_date' ) ) {
 			function progenitor_post_date() {
 				if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {

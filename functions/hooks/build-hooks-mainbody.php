@@ -106,7 +106,7 @@ if ( !function_exists('progenitor_build_mainbody') ) {
         function progenitor_build_mainbody_home() {
 
           progenitor_build_mainbody_top();
-          progenitor_build_content_home();
+          progenitor_build_content_blog_index();
           progenitor_build_mainbody_bottom();
         }
       }

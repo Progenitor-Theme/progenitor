@@ -31,6 +31,9 @@ if ( !function_exists('progenitor_build_header') ) {
   -----------
   Configurable with up to two Bootstrap navbar menus (left and right)
   and an inline search form (right).
+  If you remove the left or right menu in your child theme, be sure also to
+  unregister the menu too, so that it does not appear in the admin area. See:
+  https://codex.wordpress.org/Function_Reference/unregister_nav_menu
 \*----------------------------------------------------------------------------*/
 
 if ( !function_exists('progenitor_build_navbar') ) {
@@ -77,7 +80,7 @@ if ( !function_exists('progenitor_build_navbar_menu_left') ) {
       'theme_location'  => 'navbar_menu_left',
       'container'       => false,
       'menu_class'      => '',
-      'fallback_cb'     => '__return_false',
+      'fallback_cb'     => 'progenitor_navbar_fallback_left',
       'items_wrap'      => '<ul id="%1$s" class="navbar-nav mr-auto mt-2 mt-lg-0 %2$s">%3$s</ul>',
       'depth'           => 2,
       'walker'          => new progenitor_navbar_menu_left()
@@ -91,7 +94,7 @@ if ( !function_exists('progenitor_build_navbar_menu_right') ) {
       'theme_location'  => 'navbar_menu_right',
       'container'       => false,
       'menu_class'      => '',
-      'fallback_cb'     => '__return_false',
+      'fallback_cb'     => 'progenitor_navbar_fallback_right',
       'items_wrap'      => '<ul id="%1$s" class="navbar-nav ml-auto mt-2 mt-lg-0 %2$s">%3$s</ul>',
       'depth'           => 2,
       'walker'          => new progenitor_navbar_menu_right()
@@ -101,7 +104,7 @@ if ( !function_exists('progenitor_build_navbar_menu_right') ) {
 
 if ( !function_exists('progenitor_build_navbar_search') ) {
   function progenitor_build_navbar_search() { ?>
-    <form class="form-inline ml-auto pt-2 pt-md-0 pl-md-1" role="search" method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+    <form class="form-inline pt-2 pt-md-0 pl-md-1" role="search" method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
       <input class="form-control mr-sm-2" type="text" value="<?php echo get_search_query(); ?>" placeholder="Search..." name="s" id="s">
       <button <?php progenitor_navbar_search_btn_class(); ?> type="submit" id="searchsubmit" value="<?php esc_attr_x('Search', 'search form submit', 'progenitor') ?>">
         <i class="fas fa-search"></i>

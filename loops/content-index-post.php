@@ -17,7 +17,7 @@ Used by index.php, category.php and author.php
     <?php if ( has_excerpt( $post->ID ) ) {
   		the_excerpt();
     ?>
-      <p><a <?php progenitor_readmore_class(); ?> href="<?php the_permalink(); ?>">
+      <p><a class="btn btn-primary" href="<?php the_permalink(); ?>">
         <?php _e( __('Continue reading', 'progenitor' ) . ' <i class="fas fa-arrow-right"></i>', 'progenitor' ) ?>
       </a></p>
   	<?php } else {
