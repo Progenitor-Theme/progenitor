@@ -1,0 +1,8 @@
+<?php
+/**!
+ * Index Template
+ */
+
+progenitor();
+
+?>
