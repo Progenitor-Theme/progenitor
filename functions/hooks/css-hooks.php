@@ -31,6 +31,12 @@ if ( !function_exists('progenitor_navbar_class') ) {
   }
 };
 
+if ( !function_exists('progenitor_navbar_inner_class') ) {
+  function progenitor_navbar_inner_class() {
+    echo 'class="container-responsive"';
+  }
+};
+
 if ( !function_exists('progenitor_navbar_search_btn_class') ) {
   function progenitor_navbar_search_btn_class() {
     echo 'class="btn btn-outline-secondary my-2 my-sm-0"';
