@@ -13,7 +13,7 @@ The Page Post Loop
     </header>
 
     <main <?php progenitor_article_main_class(); ?>>
-      <?php the_post_thumbnail('medium'); ?>
+      <?php //the_post_thumbnail('medium'); ?>
       <?php the_content()?>
       <?php wp_link_pages(); ?>
     </main>
