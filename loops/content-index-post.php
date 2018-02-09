@@ -12,7 +12,7 @@ Used by index.php, category.php and author.php
   </header>
 
   <main <?php progenitor_article_main_class(); ?>>
-    <?php the_post_thumbnail(); ?>
+    <?php the_post_thumbnail('medium'); ?>
 
     <?php if ( has_excerpt( $post->ID ) ) {
   		the_excerpt();
