@@ -115,7 +115,12 @@ if ( ! function_exists('progenitor_setup') ) {
 		    return $class;
 		}
 		add_filter('comment_reply_link', 'progenitor_reply_link_class');
-
+		
+		function progenitor_theme_textdomain() {
+		    load_theme_textdomain('progenitor', get_template_directory().'/languages');
+		}
+		add_action('after_setup_theme', 'progenitor_theme_textdomain');
+		
 	}
 }
 add_action('init', 'progenitor_setup');
