@@ -16,6 +16,8 @@ if ( !function_exists('progenitor') ) {
     progenitor_build_body_top();
 
     progenitor_build_header();
+    
+    progenitor_build_banner()
 
     progenitor_build_mainbody();
 
