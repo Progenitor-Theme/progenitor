@@ -67,7 +67,7 @@ body {
   flex-direction: column;
 }
 
-#mainbody {
+#site-main {
 	/* When the mainbody has not much content (e.g. 404 page),
 	this pushes the footer to the bottom of the viewport */
   flex: 1;

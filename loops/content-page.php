@@ -12,11 +12,11 @@ The Page Post Loop
       <h1><?php the_title()?></h1>
     </header>
 
-    <main <?php progenitor_article_main_class(); ?>>
+    <div <?php progenitor_article_main_class(); ?>>
       <?php //the_post_thumbnail('medium'); ?>
       <?php the_content()?>
       <?php wp_link_pages(); ?>
-    </main>
+    </div>
   </article>
 
 <?php endwhile;

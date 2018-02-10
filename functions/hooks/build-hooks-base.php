@@ -19,7 +19,7 @@ if ( !function_exists('progenitor') ) {
     
     progenitor_build_banner();
 
-    progenitor_build_mainbody();
+    progenitor_build_main();
 
     progenitor_build_footer();
 

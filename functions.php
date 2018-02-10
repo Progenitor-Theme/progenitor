@@ -21,7 +21,7 @@ require get_template_directory() . '/functions/pagination/split-post.php';
 require get_template_directory() . '/functions/hooks/build-hooks-base.php';
 require get_template_directory() . '/functions/hooks/build-hooks-header.php';
 require get_template_directory() . '/functions/hooks/build-hooks-banner.php';
-require get_template_directory() . '/functions/hooks/build-hooks-mainbody.php';
+require get_template_directory() . '/functions/hooks/build-hooks-main.php';
 require get_template_directory() . '/functions/hooks/build-hooks-content.php';
 require get_template_directory() . '/functions/hooks/build-hooks-sidebars.php';
 require get_template_directory() . '/functions/hooks/build-hooks-footer.php';

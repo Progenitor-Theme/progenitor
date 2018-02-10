@@ -45,12 +45,24 @@ if ( !function_exists('progenitor_navbar_search_btn_class') ) {
 
 
 /*----------------------------------------------------------------------------*\
-  MAINBODY
+  SITE MAIN
 \*----------------------------------------------------------------------------*/
 
-if ( !function_exists('progenitor_mainbody_wrapper_class') ) {
-  function progenitor_mainbody_wrapper_class() {
+if ( !function_exists('progenitor_main_outer_class') ) {
+  function progenitor_main_outer_class() {
     echo 'class="pt-5 pb-5"';
+  }
+};
+
+if ( !function_exists('progenitor_main_container_class') ) {
+  function progenitor_main_container_class() {
+    echo 'class="container-responsive"';
+  }
+};
+
+if ( !function_exists('progenitor_main_inner_class') ) {
+  function progenitor_main_inner_class() {
+    echo 'class="row"';
   }
 };
 

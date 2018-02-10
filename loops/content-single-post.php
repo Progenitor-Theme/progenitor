@@ -12,10 +12,10 @@ The Single Posts Loop
       <?php progenitor_build_single_post_front_matter(); ?>
     </header>
 
-    <main <?php progenitor_article_main_class(); ?>>
+    <div <?php progenitor_article_main_class(); ?>>
       <?php the_content()?>
       <?php wp_link_pages(); ?>
-    </main>
+    </div>
 
     <?php progenitor_build_author_bio(); ?>
   </article>

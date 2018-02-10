@@ -11,7 +11,7 @@ Used by index.php, category.php and author.php
     <?php progenitor_build_index_post_front_matter(); ?>
   </header>
 
-  <main <?php progenitor_article_main_class(); ?>>
+  <div <?php progenitor_article_main_class(); ?>>
     <?php //the_post_thumbnail('medium'); ?>
 
     <?php if ( has_excerpt( $post->ID ) ) {
@@ -23,5 +23,5 @@ Used by index.php, category.php and author.php
   	<?php } else {
   		the_content( progenitor_more() );
 		} ?>
-  </main>
+  </div>
 </article>

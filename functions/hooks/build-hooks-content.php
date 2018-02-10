@@ -8,7 +8,7 @@
   CONTENT
   -------
   `#content` templates (where the loop is) are chosen by the conditional tags
-  in `progenitor_build_mainbody()`.
+  in `progenitor_build_main()`.
 \*----------------------------------------------------------------------------*/
 
 // Content: 404
