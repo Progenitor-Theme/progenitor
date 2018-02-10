@@ -38,7 +38,7 @@
 if ( !function_exists('progenitor_build_main_top') ) {
   function progenitor_build_main_top() { ?>
     <main id="site-main" <?php progenitor_main_outer_class(); ?>>
-      <?php progenitor_action_mainbody_top(); ?>
+      <?php progenitor_action_main_top(); ?>
       <div <?php progenitor_main_container_class(); ?>>
         <div <?php progenitor_main_inner_class(); ?>>
 
@@ -54,7 +54,7 @@ if ( !function_exists('progenitor_build_main_bottom') ) {
 
         </div>
       </div>
-      <?php progenitor_action_mainbody_bottom(); ?>
+      <?php progenitor_action_main_bottom(); ?>
     </main><!-- /#site-main -->
   <?php }
 };
@@ -68,7 +68,7 @@ if ( !function_exists('progenitor_build_main_bottom') ) {
   The `#content` templates (where the loop is) are determined by conditional
   tags.
 
-  Child themes can add more specific conditional tags, in `progenitor_child_mainbody_specifics()` -- see below.
+  Child themes can add more specific conditional tags, in `progenitor_child_main_specifics()` -- see below.
 
   See: https://codex.wordpress.org/Conditional_Tags
 \*----------------------------------------------------------------------------*/
@@ -214,13 +214,13 @@ if ( !function_exists('progenitor_build_main') ) {
       progenitor_build_main_404();
     }
 
-    elseif ( !function_exists('progenitor_child_mainbody_specifics') ) {
-      function progenitor_child_mainbody_specifics() {
+    elseif ( !function_exists('progenitor_child_main_specifics') ) {
+      function progenitor_child_main_specifics() {
         // Do nothing.
         // This is only here to provide a place for child themes to add
         // their own specific mainbodies in conditional tags.
       }
-      progenitor_child_mainbody_specifics();
+      progenitor_child_main_specifics();
     }
 
     // Fallback (default)

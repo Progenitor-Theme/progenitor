@@ -18,7 +18,7 @@ if ( !function_exists('progenitor_build_404_message') ) {
 
     <div class="alert alert-warning">
       <h1>
-        <i class="glyphicon glyphicon-warning-sign"></i> <?php _e('Error', 'progenitor'); ?> 404
+        <i class="fas fa-exclamation-triangle"></i> <?php _e('Error', 'progenitor'); ?> 404
       </h1>
 
       <p>
@@ -80,7 +80,7 @@ if ( !function_exists('progenitor_build_content_author') ) {
           wp_redirect(esc_url( home_url() ) . '/404', 404);
         }
       ?>
-      
+
       <header <?php progenitor_article_header_class(); ?>>
         <h1>
           <?php echo sprintf(__('Author: %s', 'progenitor'), get_the_author_meta('display_name', $userInfo -> data -> ID)); ?>

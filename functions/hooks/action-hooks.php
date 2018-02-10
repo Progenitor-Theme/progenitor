@@ -76,7 +76,7 @@ function progenitor_action_sidebar_2_bottom() {
 function progenitor_action_main_top() {
   do_action('progenitor_action_main_top');
 }
-function progenitor_action_mainb_bottom() {
+function progenitor_action_main_bottom() {
   do_action('progenitor_action_main_bottom');
 }
 
