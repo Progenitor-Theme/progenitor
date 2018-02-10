@@ -71,14 +71,13 @@ function progenitor_action_sidebar_2_bottom() {
   do_action('progenitor_action_sidebar_2_bottom');
 }
 
-// Mainbody i.e. `#mainbody` wrapper,
-// everything between <header `#site-header`> and <footer `#site-footer`>
+// #site-main
 
-function progenitor_action_mainbody_top() {
-  do_action('progenitor_action_mainbody_top');
+function progenitor_action_main_top() {
+  do_action('progenitor_action_main_top');
 }
-function progenitor_action_mainbody_bottom() {
-  do_action('progenitor_action_mainbody_bottom');
+function progenitor_action_mainb_bottom() {
+  do_action('progenitor_action_main_bottom');
 }
 
 // #content (where the loop is)
