@@ -14,8 +14,8 @@ if ( ! function_exists('progenitor_widgets_init') ) {
       'description'     => __( 'Before the mainbody-content.', 'progenitor' ),
       'before_widget'   => '<div class="%1$s %2$s">',
       'after_widget'    => '</div>',
-      'before_title'    => '<h4>',
-      'after_title'     => '</h4>',
+      'before_title'    => '<h2>',
+      'after_title'     => '</h2>',
     ) );
 
     // Sidebar 2 (one widget area)
