@@ -38,9 +38,8 @@ if ( !function_exists('progenitor_build_banner') ) {
 
 if ( !function_exists('progenitor_build_banner_image') ) {
   function progenitor_build_banner_image() {
-
-		//if (wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[1] > 1110)
-		if (wp_get_attachment_image_src(get_post_thumbnail_id(), 'full') > 1110) {
+    $img_full = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+    if ($img_full[1] > 1110) {
       the_post_thumbnail('large');
     } else {
       the_post_thumbnail();
