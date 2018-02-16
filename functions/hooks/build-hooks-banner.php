@@ -17,7 +17,7 @@ if ( !function_exists('progenitor_build_banner') ) {
 
       progenitor_build_banner_image();
 
-      echo '</div>’;
+      echo '</div>';
     }
 
   }
