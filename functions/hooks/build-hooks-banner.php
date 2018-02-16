@@ -9,21 +9,18 @@
 \*----------------------------------------------------------------------------*/
 
 if ( !function_exists('progenitor_build_banner') ) {
-  function progenitor_build_banner() { ?>
+  function progenitor_build_banner() { 
 
-    <?php if (has_post_thumbnail()) { ?>
+    if (has_post_thumbnail()) {
 
-    <div id="site-banner" class="text-center">
+      echo '<div id="site-banner" class="text-center">';
 
+      progenitor_build_banner_image();
 
-      <?php progenitor_build_banner_image(); ?>
+      echo '</div>';
+    }
 
-
-    </div>
-
-    <?php } ?>
-
-  <?php }
+  }
 };
 
 /*----------------------------------------------------------------------------*\
