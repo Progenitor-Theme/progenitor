@@ -1,7 +1,6 @@
 <?php
 /**!
  * Remove Unwanted Stuff
- * =====================
  * If you do want this stuff in your child theme, you can override there.
  */
 

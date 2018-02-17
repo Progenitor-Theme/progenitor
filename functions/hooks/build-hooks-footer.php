@@ -1,7 +1,7 @@
 <?php
 /**!
- * Build Hooks 6: Site Footer
- * ==========================
+ * Build Hooks: Site Footer
+ * ========================
  */
 
 /*----------------------------------------------------------------------------*\
@@ -15,7 +15,7 @@ if ( !function_exists('progenitor_build_footer') ) {
 
     <?php progenitor_action_footer_before(); ?>
 
-    <footer id="site-footer" <?php progenitor_action_footer_class(); ?> role="navigation">
+    <footer id="site-footer" <?php progenitor_footer_class(); ?> role="navigation">
       <?php progenitor_action_footer_top(); ?>
       <div class="container">
 

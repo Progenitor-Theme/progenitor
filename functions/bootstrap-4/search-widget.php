@@ -1,4 +1,7 @@
 <?php
+/**!
+ * Bootstrap search form
+ */
 
 if ( ! function_exists('progenitor_search_form') ) {
   function progenitor_search_form( $form ) {

@@ -22,23 +22,33 @@ if ( !function_exists('progenitor_body_class') ) {
 };
 
 /*----------------------------------------------------------------------------*\
-  SITE NAVBAR
+  SITE HEADER
 \*----------------------------------------------------------------------------*/
 
-if ( !function_exists('progenitor_navbar_class') ) {
-  function progenitor_navbar_class() {
+if ( !function_exists('progenitor_header_container_class') ) {
+  function progenitor_header_container_class() {
+    echo 'class="container"';
+  }
+};
+
+/*----------------------------------------------------------------------------*\
+  SITE HEADER NAV (e.g. Bootstrap 4 navbar)
+\*----------------------------------------------------------------------------*/
+
+if ( !function_exists('progenitor_header_nav_class') ) {
+  function progenitor_header_nav_class() {
     echo 'class="navbar navbar-expand-md navbar-dark bg-dark"';
   }
 };
 
-if ( !function_exists('progenitor_navbar_inner_class') ) {
-  function progenitor_navbar_inner_class() {
-    echo 'class="container-responsive"';
+if ( !function_exists('progenitor_header_nav_inner_class') ) {
+  function progenitor_header_nav_inner_class() {
+    echo 'class="container"';
   }
 };
 
-if ( !function_exists('progenitor_navbar_search_btn_class') ) {
-  function progenitor_navbar_search_btn_class() {
+if ( !function_exists('progenitor_header_nav_search_button_class') ) {
+  function progenitor_header_nav_search_button_class() {
     echo 'class="btn btn-outline-secondary my-2 my-sm-0"';
   }
 };
@@ -56,7 +66,7 @@ if ( !function_exists('progenitor_main_outer_class') ) {
 
 if ( !function_exists('progenitor_main_container_class') ) {
   function progenitor_main_container_class() {
-    echo 'class="container-responsive"';
+    echo 'class="container"';
   }
 };
 
@@ -109,6 +119,12 @@ if ( !function_exists('progenitor_article_main_class') ) {
   }
 };
 
+if ( !function_exists('progenitor_404_message_class') ) {
+  function progenitor_404_message_class() {
+    echo 'class="alert alert-warning"';
+  }
+};
+
 /*----------------------------------------------------------------------------*\
   SIDEBARS
 \*----------------------------------------------------------------------------*/
@@ -117,9 +133,9 @@ if ( !function_exists('progenitor_sidebar_1_class') ) {
   function progenitor_sidebar_1_class() {
     echo 'class="sidebar-1 ';
     if( is_active_sidebar('sidebar-2-widget-area') ) {
-      echo 'col-sm-3';
+      echo 'col-lg-3 order-lg-first';
     } else {
-      echo 'col-sm-4';
+      echo 'col-lg-4';
     }
     echo '"';
   }
@@ -129,9 +145,9 @@ if ( !function_exists('progenitor_sidebar_2_class') ) {
   function progenitor_sidebar_2_class() {
     echo 'class="sidebar-2 ';
     if( is_active_sidebar('sidebar-1-widget-area') ) {
-      echo 'col-sm-3';
+      echo 'col-lg-3';
     } else {
-      echo 'col-sm-4';
+      echo 'col-lg-4';
     }
     echo '"';
   }
@@ -142,7 +158,7 @@ if ( !function_exists('progenitor_sidebar_2_class') ) {
 \*----------------------------------------------------------------------------*/
 
 if ( !function_exists('progenitor_footer_class') ) {
-  function progenitor_action_footer_class() {
+  function progenitor_footer_class() {
     echo 'class="footer-wrapper pt-5 bg-light"';
   }
 };

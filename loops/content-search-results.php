@@ -10,16 +10,14 @@
     <header <?php progenitor_article_header_class(); ?>>
       <h4><a href="<?php the_permalink(); ?>"><?php the_title()?></a></h4>
     </header>
-    
+
     <main <?php progenitor_article_main_class(); ?>>
       <?php the_excerpt(); ?>
     </main>
   </article>
 
-<?php endwhile; else: ?>
+<?php endwhile; else:
 
-  <div class="alert alert-warning">
-    <i class="fas fa-exclamation-triangle"></i> <?php _e('Sorry, your search yielded no results.', 'progenitor'); ?>
-  </div>
+  _e('Sorry, no results were found matching your search terms. Please try again using some different keywords.', 'progenitor');
 
-<?php endif; ?>
+endif; ?>

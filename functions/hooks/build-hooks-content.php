@@ -1,7 +1,7 @@
 <?php
 /**!
- * Build Hooks 4: Content
- * ======================
+ * Build Hooks: Content
+ * ====================
  */
 
 /*----------------------------------------------------------------------------*\
@@ -16,7 +16,7 @@
 if ( !function_exists('progenitor_build_404_message') ) {
   function progenitor_build_404_message() { ?>
 
-    <div class="alert alert-warning">
+    <div <?php progenitor_404_message_class(); ?>>
       <h1>
         <i class="fas fa-exclamation-triangle"></i> <?php _e('Error', 'progenitor'); ?> 404
       </h1>
@@ -71,10 +71,10 @@ if ( !function_exists('progenitor_build_content_author') ) {
         $userInfo = get_userdata( get_query_var('author'));
         $isAuthor = true;
         if (
-          !in_array('contributor', $userInfo -> roles) &&
-          !in_array('administrator', $userInfo -> roles) &&
-          !in_array('author', $userInfo -> roles) &&
-          !in_array('editor', $userInfo -> roles)
+          ! in_array('contributor', $userInfo -> roles) &&
+          ! in_array('administrator', $userInfo -> roles) &&
+          ! in_array('author', $userInfo -> roles) &&
+          ! in_array('editor', $userInfo -> roles)
         ) {
           $isAuthor = false;
           wp_redirect(esc_url( home_url() ) . '/404', 404);
@@ -223,103 +223,6 @@ if ( !function_exists('progenitor_build_content_single') ) {
         progenitor_action_content_bottom();
       ?>
     </div><!-- /#content -->
-
-  <?php }
-};
-
-/*----------------------------------------------------------------------------*\
-  CONTENT COMPONENTS
-\*----------------------------------------------------------------------------*/
-
-if ( !function_exists('progenitor_build_index_post_front_matter') ) {
-  function progenitor_build_index_post_front_matter() { ?>
-
-    <h2>
-      <a href="<?php the_permalink(); ?>">
-        <?php the_title()?>
-      </a>
-    </h2>
-    <p class="small text-muted">
-      <i class="far fa-calendar-alt"></i>&nbsp;<?php progenitor_post_date(); ?>&nbsp;|
-      <i class="fas fa-user"></i>&nbsp; <?php _e('By ', 'progenitor'); the_author_posts_link(); ?>&nbsp;|
-      <i class="fas fa-comment"></i>&nbsp;<?php _e('Comments: ', 'progenitor');?> <a href="<?php comments_link(); ?>"><?php comments_number('None', '1', '%'); ?></a>
-    </p>
-
-  <?php }
-};
-
-if ( !function_exists('progenitor_build_single_post_front_matter') ) {
-  function progenitor_build_single_post_front_matter() { ?>
-
-    <h1>
-      <?php the_title()?>
-    </h1>
-    <div class="entry-meta">
-      <p class="h4 text-muted">
-        <?php _e('By ', 'progenitor'); the_author_posts_link(); ?>
-      </p>
-      <p class="small text-muted">
-        <i class="far fa-calendar-alt"></i>&nbsp;<?php progenitor_post_date(); ?>&nbsp;|
-        <i class="fas fa-comment"></i>&nbsp;<?php _e('Comments: ', 'progenitor');?> <a href="<?php comments_link(); ?>"><?php comments_number('None', '1', '%'); ?></a><br />
-        <i class="fas fa-folder-open"></i>&nbsp;
-        <?php _e('Category: ', 'progenitor'); the_category(', ') ?>
-        <?php if ( has_tag() ) { ?>
-          | <i class="fas fa-tags"></i>&nbsp;<?php the_tags('Tags: ', ', '); ?>
-        <?php } ?>
-      </p>
-    </div>
-
-  <?php }
-};
-
-if ( !function_exists('progenitor_build_author_bio') ) {
-  function progenitor_build_author_bio() { ?>
-
-    <div class="author-bio media my-5">
-      <?php progenitor_author_avatar(); ?>
-      <div class="media-body ml-3">
-        <p class="h4 author-name">
-          <?php
-            if (!is_author()) { _e('Author: ', 'progenitor'); };
-            the_author_posts_link();
-          ?>
-        </p>
-        <p class="author-description"><?php progenitor_author_description(); ?></p>
-        <?php if (!is_author()) { ?>
-          <p class="author-other-posts text-muted"><?php _e('Other posts by ', 'progenitor'); the_author_posts_link(); ?></p>
-        <?php } ?>
-      </div>
-    </div><!-- /.author-bio -->
-
-  <?php }
-};
-
-if ( !function_exists('progenitor_build_single_comments') ) {
-  function progenitor_build_single_comments() {
-
-    if ( comments_open() || get_comments_number() ) {
-
-      progenitor_action_comments_before();
-
-			comments_template();
-
-      progenitor_action_comments_after();
-		};
-
-  }
-};
-
-if ( !function_exists('progenitor_build_single_prev_next') ) {
-  function progenitor_build_single_prev_next() { ?>
-
-    <div class="row mt-5">
-      <div class="col">
-        <?php previous_post_link('%link', '<i class="fas fa-fw fa-arrow-left"></i> Previous post: '.'%title'); ?>
-      </div>
-      <div class="col text-right">
-        <?php next_post_link('%link', 'Next post: '.'%title' . ' <i class="fas fa-fw fa-arrow-right"></i>'); ?>
-      </div>
-    </div>
 
   <?php }
 };

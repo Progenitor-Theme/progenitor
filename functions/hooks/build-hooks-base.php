@@ -1,7 +1,7 @@
 <?php
 /**!
- * Build Hooks 1: Base
- * ===================
+ * Build Hooks: Base
+ * =================
  */
 
 /*----------------------------------------------------------------------------*\
@@ -16,7 +16,8 @@ if ( !function_exists('progenitor') ) {
     progenitor_build_body_top();
 
     progenitor_build_header();
-    
+
+    // Hero image (from featured image)
     progenitor_build_banner();
 
     progenitor_build_main();

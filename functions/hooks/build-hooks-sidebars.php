@@ -1,20 +1,41 @@
 <?php
 /**!
- * Build Hooks 5: Sidebars
- * =======================
+ * Build Hooks: Sidebars
+ * =====================
  */
 
 /*----------------------------------------------------------------------------*\
   SIDEBARS
   --------
-  Progenitor has two sidebars, each with one widget area:
+  Progenitor has two sidebars, each with one widget area. Both are located after (i.e. below) the main content area:
 
-  * `#sidebar-1` is before main content area;
-  * `#sidebar-2` is after main content area.
+  <main id="site-main">
+    <div id="content">...</div>
+    <div id="sidebar-1">...</div>
+    <div id="sidebar-2">...</div>
+  </main>
 
-  These are not labeled `-left` and `-right` because RTL and LTR have
-  different orders -- and because you can use Bootstrap css flexbox grid column
-  ordering to reorder them.
+  However, Bootstrap grid layout CSS classes are configured so that on lg
+  (> 992px) up:
+
+  (1.) If you have no sidebar widgets:
+
+  |-------------------------- #content (full width) ---------------------------|
+
+  (2.) If you have 1 sidebar: content flexbox `col` adjusts to accommodate a
+  sidebar that has class `col-lg-4` (i.e. #content becomes 8 columns):
+
+  |---------- #content (col) -------------------------|------ #sidebar-1 ------|
+                                                              (col-lg-4)
+
+  (1.) If you have no sidebar widgets, then the #content is full wigth:
+
+  |-- #sidebar-1 --|---------------- #content ----------------|-- #sidebar-2 --|
+      (col-lg-4)                                                  (col-lg-4)
+
+  The sidebars are not labeled `-left` and `-right` because RTL and LTR users
+  have different orders -- and because you can use Bootstrap css flexbox grid
+  column ordering to reorder them.
 
   If you put no widgets in any sidebar widget area, then that sidebar will not
   be built -- and the sidebar classes will be modified to compensate for its

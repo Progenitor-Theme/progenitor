@@ -1,7 +1,6 @@
 <?php
 /**!
  * Setup
- * =====
  */
 
 if ( ! function_exists('progenitor_setup') ) {
@@ -34,26 +33,6 @@ if ( ! function_exists('progenitor_setup') ) {
 		) );
 
 		add_theme_support('automatic-feed-links');
-
-		if ( ! function_exists( 'progenitor_navbar_fallback_left' ) ) {
-			function progenitor_navbar_fallback_left() {
-				?>
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-    			<li clas="menu-item"><a class="nav-link" href="<?php echo admin_url('nav-menus.php'); ?>"><?php esc_html_e( 'Add a menu', 'progenitor' ); ?></a></li>
-				</ul>
-				<?php
-			}
-		}
-
-		if ( ! function_exists( 'progenitor_navbar_fallback_right' ) ) {
-			function progenitor_navbar_fallback_right() {
-				?>
-				<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-    			<li clas="menu-item"><a class="nav-link" href="<?php echo admin_url('nav-menus.php'); ?>"><?php esc_html_e( 'Add a menu', 'progenitor' ); ?></a></li>
-				</ul>
-				<?php
-			}
-		}
 
 		if ( ! function_exists( 'progenitor_post_date' ) ) {
 			function progenitor_post_date() {
@@ -91,36 +70,40 @@ if ( ! function_exists('progenitor_setup') ) {
 
 		function progenitor_more() {
 			if ( is_search() ) {
-				return '&hellip; <a href="'. get_permalink() . '">' . _x('more', 'read more after excerpt', 'progenitor') . '</a>';
-			} else {
-				return '<p><a class="btn btn-primary" href="'. get_permalink() . '">' . _x('Continue reading', 'read more after excerpt', 'progenitor') . ' <i class="fas fa-arrow-right"></i>' . '</a></p>';
+				return '<a href="'. get_permalink() . '">' . _x('&hellip; more', 'read more after excerpt', 'progenitor') . '</a>';
+			} elseif ( has_excerpt() ) { ?>
+				<p><a href="<?php the_permalink(); ?>">
+	        <?php _e( __('Continue reading', 'progenitor' ) . ' <i class="fas fa-arrow-right"></i>', 'progenitor' ) ?>
+	      </a></p>
+			<?php } else {
+				return '<p><a href="'. get_permalink() . '">' . _x('Continue reading', 'read more after excerpt', 'progenitor') . ' <i class="fas fa-arrow-right"></i>' . '</a></p>';
 			}
 		}
 		add_filter('excerpt_more', 'progenitor_more');
 
 		function progenitor_prevent_more_jump( $link ) {
-		    $offset = strpos( $link, '#more-' );
-		    if ($offset) {
-		        $end = strpos($link, '"', $offset);
-		    }
-		    if ($end) {
-		        $link = substr_replace($link, '', $offset, $end-$offset);
-		    }
-		    return $link;
+		  $offset = strpos( $link, '#more-' );
+		  if ($offset) {
+		    $end = strpos($link, '"', $offset);
+		  }
+		  if ($end) {
+		    $link = substr_replace($link, '', $offset, $end-$offset);
+		  }
+		  return $link;
 		}
 		add_filter('the_content_more_link', 'progenitor_prevent_more_jump');
 
-		function progenitor_reply_link_class($class) {
-		    $class = str_replace("class='comment-reply-link", "class='btn btn-sm btn-primary comment-reply-link", $class);
-		    return $class;
-		}
-		add_filter('comment_reply_link', 'progenitor_reply_link_class');
-		
 		function progenitor_theme_textdomain() {
-		    load_theme_textdomain('progenitor', get_template_directory().'/languages');
+		  load_theme_textdomain('progenitor', get_template_directory().'/languages');
 		}
 		add_action('after_setup_theme', 'progenitor_theme_textdomain');
-		
+
+		// Get the CSS/JS Framework and Icons
+		// ==================================
+
+		progenitor_icons();
+
+		progenitor_framework();
 	}
 }
 add_action('init', 'progenitor_setup');

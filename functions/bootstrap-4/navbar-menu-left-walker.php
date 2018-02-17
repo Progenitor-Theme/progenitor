@@ -1,6 +1,9 @@
 <?php
+/**!
+ * Bootstrap navbar menu-left walker
+ */
 
-class progenitor_navbar_menu_left extends Walker_Nav_menu {
+class progenitor_header_nav_menu_left extends Walker_Nav_menu {
 
 	function start_lvl( &$output, $depth = 0, $args = array() ){ // ul
 		$indent = str_repeat("\t",$depth); // indents the outputted HTML
@@ -48,9 +51,3 @@ class progenitor_navbar_menu_left extends Walker_Nav_menu {
 	}
 
 }
-
-/*
-Register Navbar Menu Left
-*/
-
-register_nav_menu('navbar_menu_left', __('Navbar menu left', 'progenitor'));

@@ -1,6 +1,6 @@
 <?php
 /**!
- * Split-Post or Split-Page Pagination
+ * Bootstrap Split-Post or Split-Page Pagination
  */
 
 function progenitor_split_post_pagination($wp_links) {
@@ -85,44 +85,3 @@ function progenitor_split_post_pagination($wp_links) {
 }
 
 add_filter('wp_link_pages', 'progenitor_split_post_pagination');
-
-function progenitor_page_X_of_Y() {
-	function progenitor_page_numbering() {
-
-		global $post;
-
-		$post_base = trailingslashit( get_site_url(null, $post->post_name) );
-		$wp_links = trim(str_replace(array('<p>Pages: ', '</p>'), '', $wp_links));
-
-		if ( empty($wp_links) ) {
-			return '';
-	  }
-
-		// Split links at spaces
-		$splits = explode(' ', $wp_links );
-		$links = array();
-		$current_page = 1;
-
-		// Loop over split array, correct and rejoin split links
-		foreach( $splits as $key => $split ){
-			if( is_numeric($split) ) {
-				$links[] = $split;
-				$current_page = $split;
-			} else if ( strpos($split, 'href') === false ) {
-				$links[] = $split . ' ' . $splits[$key + 1];
-			}
-		}
-
-		$output .= '<span>Page ' . $current_page . ' of ' . $num_pages . '</span>';
-
-		return $output;
-	}
-	add_filter('wp_link_pages', 'progenitor_page_numbering');
-
-	?>
-	<p class="text-center text-muted page-x-of-y">
-		<?php progenitor_page_numbering(); ?>
-	</p>
-	<?php
-
-}

@@ -5,22 +5,19 @@
  */
 ?>
 
-<?php if(have_posts()): while(have_posts()): the_post();?>
+<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
-  <?php get_template_part('loops/content-index-post', get_post_format()); ?>
+  <?php get_template_part( 'loops/content-index-post', get_post_format() ); ?>
 
 <?php endwhile; ?>
 
-<?php if ( function_exists('progenitor_pagination') ) { progenitor_pagination(); } else if ( is_paged() ) { ?>
-  <ul class="pagination">
-    <li class="page-item older">
-      <?php next_posts_link('<i class="fas fa-arrow-left"></i> ' . __('Previous', 'progenitor')) ?></li>
-    <li class="page-item newer">
-      <?php previous_posts_link(__('Next', 'progenitor') . ' <i class="fas fa-arrow-right"></i>') ?></li>
-  </ul>
-<?php } ?>
+<?php if ( function_exists('progenitor_pagination') ) : progenitor_pagination(); else : ?>
+    <p>
+      <?php previous_posts_link(__('<i class="fas fa-arrow-left"></i> ' . 'Newer posts', 'posts published later', 'progenitor')) ?> | <?php next_posts_link( __('Older posts', 'posts published earlier', 'progenitor') . ' <i class="fas fa-arrow-right"></i>') ?>
+    </p>
+<?php endif; ?>
 
-<?php else:
+<?php else :
   wp_redirect(esc_url( home_url() ) . '/404', 404);
   exit;
 endif; ?>

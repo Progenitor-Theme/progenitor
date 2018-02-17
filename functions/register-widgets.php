@@ -11,11 +11,11 @@ if ( ! function_exists('progenitor_widgets_init') ) {
     register_sidebar( array(
       'name'            => __( 'Sidebar 1', 'progenitor' ),
       'id'              => 'sidebar-1-widget-area',
-      'description'     => __( 'Before the mainbody-content.', 'progenitor' ),
+      'description'     => __( '', 'progenitor' ),
       'before_widget'   => '<div class="%1$s %2$s">',
       'after_widget'    => '</div>',
-      'before_title'    => '<h4>',
-      'after_title'     => '</h4>',
+      'before_title'    => '<h2>',
+      'after_title'     => '</h2>',
     ) );
 
     // Sidebar 2 (one widget area)
@@ -23,7 +23,7 @@ if ( ! function_exists('progenitor_widgets_init') ) {
     register_sidebar( array(
       'name'            => __( 'Sidebar 2', 'progenitor' ),
       'id'              => 'sidebar-2-widget-area',
-      'description'     => __( 'After the mainbody-content.', 'progenitor' ),
+      'description'     => __( '', 'progenitor' ),
       'before_widget'   => '<div class="%1$s %2$s">',
       'after_widget'    => '</div>',
       'before_title'    => '<h2>',

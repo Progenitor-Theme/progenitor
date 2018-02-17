@@ -23,42 +23,6 @@
 	display: block;
 }
 
-/* Responsive Container (because Bootstrap 4.0.0 doesn't have this) */
-
-.container-responsive {
-	width: 100%;
-	max-width: 1140px;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.navbar > .container-responsive {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-}
-
-.navbar > .container,
-.navbar > .container-fluid,
-.navbar > .container-responsive {
-	padding-right: 0;
-	padding-left: 0;
-}
-.navbar > .container,
-.navbar > .container-responsive {
-	max-width: 1110px;
-}
-
 /* Flexbox sticky footer */
 
 body {
@@ -95,43 +59,3 @@ input:focus::-moz-placeholder { color: transparent; } /* FF 19+ */
 textarea:focus::-webkit-input-placeholder { color: transparent; }
 textarea:focus:-moz-placeholder { color: transparent; } /* FF 4-18 */
 textarea:focus::-moz-placeholder { color: transparent; } /* FF 19+ */
-
-/* Comments */
-
-.commentlist {
-  counter-reset: li; /* Initiate a counter */
-  padding: 0
-}
-
-.commentlist > li {
-  position: relative;
-  margin: 0 0 20px 0;
-  list-style: none /* Disable the normal item numbering */
-}
-.commentlist > li:before {
-  content: "Thread " counter(li); /* Use the counter as content */
-  counter-increment: li; /* Increment the counter by 1 */
-  position:absolute;
-  top: 0;
-  right: 0;
-  border-bottom: 1px solid #e9ecef;
-  border-left: 1px solid #e9ecef;
-  border-bottom-left-radius: 4px;
-  padding: 5px 20px 5px 10px;
-  color: #999
-}
-.commentlist ol,
-.commentlist ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.commentlist li {
-  border: 1px solid #e9ecef;
-  border-radius: 4px;
-  padding: 15px;
-}
-.commentlist li li {
-  margin-top: 15px;
-}

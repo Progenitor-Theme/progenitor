@@ -1,7 +1,7 @@
 <?php
 /**!
- * Build Hooks 3: Site Main
- * ========================
+ * Build Hooks: Site Main
+ * ======================
  */
 
 /*----------------------------------------------------------------------------*\
@@ -11,14 +11,13 @@
 
   <body>
     <header id="site-header">...</header>
-
     <div id="site-banner">...</div>
 
     <main id="site-main">
-      <div id="sidebar-1">...</div>
 
       <div id="content">...</div>
 
+      <div id="sidebar-1">...</div>
       <div id="sidebar-2">...</div>
     </main>
 
@@ -33,7 +32,7 @@
   the main content inside the (post or page) article (see the loops).
 \*----------------------------------------------------------------------------*/
 
-// #site-main top (including sidebar-1 before the `#content`)
+// #site-main top
 
 if ( !function_exists('progenitor_build_main_top') ) {
   function progenitor_build_main_top() { ?>
@@ -41,15 +40,15 @@ if ( !function_exists('progenitor_build_main_top') ) {
       <?php progenitor_action_main_top(); ?>
       <div <?php progenitor_main_container_class(); ?>>
         <div <?php progenitor_main_inner_class(); ?>>
-
-          <?php progenitor_build_sidebar_1(); ?>
   <?php }
 };
 
-// #site-main bottom (including sidebar-2 after the `#content`)
+// #site-main bottom (including #sidebar-1 and #sidebar-2 after the `#content`)
 
 if ( !function_exists('progenitor_build_main_bottom') ) {
   function progenitor_build_main_bottom() { ?>
+
+          <?php progenitor_build_sidebar_1(); ?>
           <?php progenitor_build_sidebar_2(); ?>
 
         </div>

@@ -12,16 +12,15 @@ Used by index.php, category.php and author.php
   </header>
 
   <div <?php progenitor_article_main_class(); ?>>
-    <?php //the_post_thumbnail('medium'); ?>
+    <?php
+      //the_post_thumbnail('medium');
 
-    <?php if ( has_excerpt( $post->ID ) ) {
-  		the_excerpt();
+      if ( has_excerpt( $post->ID ) ) {
+    		the_excerpt();
+        progenitor_more();
+      } else {
+    		the_content( progenitor_more() );
+    	}
     ?>
-      <p><a class="btn btn-primary" href="<?php the_permalink(); ?>">
-        <?php _e( __('Continue reading', 'progenitor' ) . ' <i class="fas fa-arrow-right"></i>', 'progenitor' ) ?>
-      </a></p>
-  	<?php } else {
-  		the_content( progenitor_more() );
-		} ?>
   </div>
 </article>

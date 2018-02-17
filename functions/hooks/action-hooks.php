@@ -40,17 +40,17 @@ function progenitor_action_header_after() {
 
 // inclues/navbar.php (Header Navbar)
 
-function progenitor_action_navbar_before() {
-  do_action('progenitor_action_navbar_before');
+function progenitor_action_header_nav_before() {
+  do_action('progenitor_action_header_nav_before');
 }
-function progenitor_action_navbar_top() {
-  do_action('progenitor_action_navbar_top');
+function progenitor_action_header_nav_top() {
+  do_action('progenitor_action_header_nav_top');
 }
-function progenitor_action_navbar_bottom() {
-  do_action('progenitor_action_navbar_bottom');
+function progenitor_action_header_nav_bottom() {
+  do_action('progenitor_action_header_nav_bottom');
 }
-function progenitor_action_navbar_after() {
-  do_action('progenitor_action_navbar_after');
+function progenitor_action_header_nav_after() {
+  do_action('progenitor_action_header_nav_after');
 }
 
 // sidebar-1.php
@@ -113,7 +113,7 @@ function progenitor_action_footer_after() {
   do_action('progenitor_action_footer_after');
 }
 
-// Footer bottom (inside the site <footer>)
+// Footer bottom (inside <footer id="site-footer">)
 
 function progenitor_action_footer_bottom_before() {
   do_action('progenitor_action_footer_bottom_before');
