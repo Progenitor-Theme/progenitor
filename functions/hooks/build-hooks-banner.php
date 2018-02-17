@@ -13,7 +13,7 @@ if ( !function_exists('progenitor_build_banner') ) {
 
     if (has_post_thumbnail()) {
 
-      echo '<div id="site-banner" class="text-center">';
+      echo '<div id="site-banner" class="text-center" role="banner">';
 
       progenitor_build_banner_image();
 
