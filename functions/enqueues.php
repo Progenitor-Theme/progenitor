@@ -30,6 +30,14 @@ if ( ! function_exists('progenitor_enqueues') ) {
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');
 		}
+		
+		// FANCYBOX
+		// ========
+
+		if ( function_exists('progenitor_fancybox_enqueues') ) {
+			progenitor_fancybox_enqueues();
+		}	
+			
 	}
 }
 add_action('wp_enqueue_scripts', 'progenitor_enqueues', 100);
