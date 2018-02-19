@@ -59,15 +59,16 @@ if ( !function_exists('progenitor_build_main_bottom') ) {
 };
 
 /*----------------------------------------------------------------------------*\
-  BUILD EACH MAINBODY
-  -------------------
-  Here each mainbody is individually controlled by build hooks -- so that child
-  themes can swap in their own mainbody designs.
+  BUILD EACH MAIN
+  ---------------
+  Here each <main class="site-main"> is individually controlled by build hooks 
+  -- so that childcthemes can swap in their own designs.
 
   The `#content` templates (where the loop is) are determined by conditional
   tags.
 
-  Child themes can add more specific conditional tags, in `progenitor_child_main_specifics()` -- see below.
+  Child themes can add more specific conditional tags, in 
+  `progenitor_child_main_specifics()` -- see below.
 
   See: https://codex.wordpress.org/Conditional_Tags
 \*----------------------------------------------------------------------------*/
