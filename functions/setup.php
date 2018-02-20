@@ -106,6 +106,8 @@ if ( ! function_exists('progenitor_setup') ) {
 		progenitor_framework();
 		
 		progenitor_fancybox();
+		
+		progenitor_woocommerce();
 	}
 }
 add_action('init', 'progenitor_setup');
