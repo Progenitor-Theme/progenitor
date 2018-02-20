@@ -11,6 +11,7 @@ require get_template_directory() . '/functions/remove-unwanted.php';
 require get_template_directory() . '/functions/icons.php';
 require get_template_directory() . '/functions/framework.php';
 require get_template_directory() . '/functions/fancybox.php';
+require get_template_directory() . '/functions/woocommerce.php';
 
 require get_template_directory() . '/functions/enqueues-supporting.php';
 require get_template_directory() . '/functions/enqueues.php';
