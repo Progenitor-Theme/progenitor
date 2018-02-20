@@ -36,7 +36,14 @@ if ( ! function_exists('progenitor_enqueues') ) {
 
 		if ( function_exists('progenitor_fancybox_enqueues') ) {
 			progenitor_fancybox_enqueues();
-		}	
+		}
+		
+		// WOOCOMMERCE
+		// ===========
+
+		if ( function_exists('progenitor_woocommerce_enqueues') ) {
+			progenitor_woocommerce_enqueues();
+		}				
 			
 	}
 }
