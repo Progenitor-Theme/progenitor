@@ -60,7 +60,7 @@ textarea:focus::-webkit-input-placeholder { color: transparent; }
 textarea:focus:-moz-placeholder { color: transparent; } /* FF 4-18 */
 textarea:focus::-moz-placeholder { color: transparent; } /* FF 19+ */
 
-/* FONTS from font-awesome.css */
+/* FONTS from font-awesome.css
 @font-face {font-family:'FontAwesome'; src:url('../../fonts/fontawesome-webfont.eot'); src:url('../../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../../fonts/fontawesome-webfont.woff2') format('woff2'), url('../../fonts/fontawesome-webfont.woff') format('woff'), url('../../fonts/fontawesome-webfont.ttf') format('truetype'), url('../../fonts/fontawesome-webfont.svg') format('svg'); font-weight:normal;
  font-style:normal;}
 .fa {display:inline-block; font:normal normal normal 14px/1 FontAwesome; font-size:inherit; transform:translate(0, 0);} 
@@ -71,4 +71,4 @@ textarea:focus::-moz-placeholder { color: transparent; } /* FF 19+ */
 .fa-pinterest:before {content:"\f0d2";}
 .fa-skype:before {content:"\f17e";}
 .fa-youtube:before {content:"\f167";}
-.fa-instagram:before {content:"\f16d";}
+.fa-instagram:before {content:"\f16d";} */
