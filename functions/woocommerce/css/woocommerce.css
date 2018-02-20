@@ -1,0 +1,39 @@
+/* Hide form placeholders on focus */
+input:focus::-webkit-input-placeholder {color:transparent;}
+input:focus:-moz-placeholder {color:transparent;} /* FF 4-18 */
+input:focus::-moz-placeholder {color:transparent;} /* FF 19+ */
+textarea:focus::-webkit-input-placeholder {color:transparent;}
+textarea:focus:-moz-placeholder {color:transparent;} /* FF 4-18 */
+textarea:focus::-moz-placeholder {color:transparent;} /* FF 19+ */
+/* WOOCOMMERCE */
+.woocommerce a:focus {outline:none}
+.woocommerce .count {background:inherit}
+.woocommerce .added_to_cart {display:block !important}
+.woocommerce .woocommerce-error:before, .woocommerce .woocommerce-info:before, .woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-error:before, .woocommerce-page .woocommerce-info:before, .woocommerce-page .woocommerce-message:before {padding-top:0}
+.woocommerce #content input.button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce-page #content input.button, .woocommerce-page #respond input#submit, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button {/* .btn */
+	display:inline-block; padding:6px 12px; margin-bottom:0px; font-size:14px; font-weight:400; line-height:1.42857; text-align:center; white-space:nowrap; vertical-align:middle; cursor:pointer; -moz-user-select:none; background-image:none; border:1px solid transparent; border-radius:4px; /* .btn-primary */
+	color:#FFF; background:#337AB7; border-color:#2E6DA4; /* Extra fixes */ 
+	text-shadow:none; box-shadow:none;}
+.woocommerce #content input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce-page #content input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover {/* .btn-primary:hover */
+	color:#FFF; background:#286090; border-color:#204D74;}
+.woocommerce #content input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce-page #respond input#submit.alt, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt {/* .btn */
+	display:inline-block; padding:6px 12px; margin-bottom:0px; font-size:14px; font-weight:400; line-height:1.42857; text-align:center; white-space:nowrap; vertical-align:middle; cursor:pointer; -moz-user-select:none; background-image:none; border:1px solid transparent; border-radius:4px; /* .btn-success */
+	color:#FFF; background-color:#5CB85C; border-color:#4CAE4C; /* Extra fixes */
+	text-shadow:none; box-shadow:none;}
+.woocommerce #content input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce-page #content input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover {/* Extras fixes */
+	background:none; text-shadow:none; /* .btn-success:hover */
+	color:#FFF; background-color:#449D44; border-color:#398439; /* BOOTSTRAP THEME .btn-success:hover */
+	background-color:#419641; background-position:0px -15px;}
+.woocommerce .woocommerce-error, .woocommerce-page .woocommerce-error {/* Extra fixes */
+	padding:0; margin:0; position:relative; border-top:none; background:none; text-shadow:none; list-style:outside none none !important; width:auto; box-shadow:none; /* .alert */
+	padding:15px; margin-bottom:20px; border:1px solid transparent; border-radius:4px; /* .alert-danger */
+	color:#A94442; background-color:#F2DEDE; border-color:#EBCCD1;}
+.woocommerce .woocommerce-error:after, .woocommerce .woocommerce-error:before, .woocommerce-page .woocommerce-error:after, .woocommerce-page .woocommerce-error:before {display:none;}
+
+/* Repairs from DMR-1 */
+.woocommerce #content {margin-top:20px;}
+.woocommerce #content .label {color:inherit; font-size:inherit;}
+.woocommerce #content li {padding:0 1em;}
+.woocommerce #content button {min-height:33px; padding-top:7px !important;}
+.woocommerce .select2-container .select2-selection--single {height:34px !important; padding:2px 0 0 5px;}
+.woocommerce input, .woocommerce textarea, .woocommerce select, .woocommerce input input[type='submit'] {max-width:inherit;}
