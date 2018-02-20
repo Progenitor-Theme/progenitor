@@ -40,10 +40,10 @@ if ( !function_exists('progenitor_build_html_head') ) {
     <head>
       <?php progenitor_action_head_top(); ?>
       <meta name="description" content="<?php if ( is_single() ) {
-					single_post_title('', true); 
-				} else {
-					bloginfo('name'); echo " - "; bloginfo('description');
-				}
+	  single_post_title('', true); 
+	} else {
+	  bloginfo('name'); echo " - "; bloginfo('description');
+	}
       ?>" />
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
