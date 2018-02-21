@@ -54,15 +54,15 @@ if ( !function_exists('progenitor_build_header_nav_brand') ) {
   function progenitor_build_header_nav_brand() { ?>   
     <?php
     if (has_custom_logo()) {
-			the_custom_logo();
-		} else {
-		?>
-			<a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>">
+        the_custom_logo();
+    } else {
+    ?>
+    <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>">
         <span><?php bloginfo('name'); ?></span>
-      </a>
+    </a>
     <?php
-		}		
-	}
+    }		
+  }
 };
 
 if ( !function_exists('progenitor_build_header_nav_menu_left') ) {
