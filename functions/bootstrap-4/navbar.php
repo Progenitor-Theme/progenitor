@@ -53,7 +53,12 @@ function progenitor_framework_build_header_nav() { ?>
 if ( !function_exists('progenitor_build_header_nav_brand') ) {
   function progenitor_build_header_nav_brand() { ?>
     <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>">
-      <span><?php bloginfo('name'); ?></span>
+  	<?php
+    $output = '';
+    if (function_exists('get_custom_logo')) {$output = get_custom_logo();}
+    if (empty($output)) {$output = '<span>'.get_bloginfo('name').'</span>';}
+    echo $output;
+		?>
     </a>
   <?php }
 };
