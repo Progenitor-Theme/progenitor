@@ -39,7 +39,7 @@ function progenitor_framework_build_header_nav() { ?>
           progenitor_build_header_nav_menu_left();
           progenitor_build_header_nav_menu_right();
           progenitor_build_header_nav_search();
-        P?>
+        ?>
       </div>
 
       <?php progenitor_action_header_nav_bottom(); ?>
