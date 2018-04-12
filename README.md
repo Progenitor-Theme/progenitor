@@ -1,6 +1,6 @@
 # Progenitor
 
-*Version 0.4*
+*Version 0.5*
 
 [https://github.com/Progenitor-Theme/Progenitor](https://github.com/Progenitor-Theme/Progenitor)
 
