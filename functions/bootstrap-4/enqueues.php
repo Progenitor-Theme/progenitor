@@ -13,18 +13,18 @@ function progenitor_framework_enqueues() {
 
   // POPPER
   // ======
-  // Popper is needed for Bootstrap popovers, tooltips and navbar collapsed show/hide hamburger
+  // Popper is needed for Bootstrap popovers, tooltips and collapsed navbar show/hide hamburger
 
-	wp_register_script('popper',  'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', false, '1.12.9', true);
-	wp_enqueue_script('popper');
+  wp_register_script('popper',  'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js', false, '1.14.0', true);
+  wp_enqueue_script('popper');
 
   // BOOTSTRAP 4
   // ===========
 
-  wp_register_style('bootstrap-css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css', false, '4.0.0', null);
+  wp_register_style('bootstrap-css', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css', false, '4.1.0', null);
   wp_enqueue_style('bootstrap-css');
 
-  wp_register_script('bootstrap-js', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js', false, '4.0.0', true);
+  wp_register_script('bootstrap-js', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js', false, '4.1.0', true);
   wp_enqueue_script('bootstrap-js');
 
   wp_register_script('bootstrap-4-wp-js', get_template_directory_uri() . '/functions/bootstrap-4/bootstrap-4-wp.js', false, null, true);
